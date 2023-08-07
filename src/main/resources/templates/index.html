@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html
+    lang="en"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0,
+            maximum-scale=1.0, minimum-scale=1.0"
+            />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" th:href="@{/css/navBar.css}"  href="../static/css/navBar.css" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+            />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+            crossorigin="anonymous"
+            />
+        <link
+            rel="stylesheet"
+            th:href="@{/css/indexStyle.css}"
+            href="../static/css/indexStyle.css"
+            />
+        <script
+            type="text/javascript"
+            th:href="@{/js/indexJs.js}"
+            src="../static/js/indexJs.js"></script>
+        <title>Home</title>
+    </head>
+    <body>
+        <header>
+            
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid x">
+                    <a class="navbar-brand" th:href="@{/}">
+                        <img
+                            th:src="@{/images/logo.png}"
+                            src="../static/images/logo.png"
+                            width="80"
+                            height="60"
+                            class="d-inline-block align-top"
+                            alt=""
+                            />
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse"
+                        id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto"></ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" th:href="@{/}" href="#">Home</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" th:href="@{/shop}" href="#">Shop</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a
+                                    class="nav-link"
+                                    sec:authorize="isAnonymous()"
+                                    th:href="@{/login}"
+                                    href="#">Login</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a
+                                    class="nav-link"
+                                    sec:authorize="isAuthenticated()"
+                                    th:href="@{/logout}"
+                                    href="#">Logout</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" th:href="@{/cart}" href="#">Cart</a>
+                            </li>
+                            <li class="nav-item active">
+                                <span class="nav-link" th:text="${cartCount}">0</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="col-md"  style="text-align: center;letter-spacing:0.16em;">
+                <marquee behavior="scroll" direction="left" scrollamount="10" onmouseover="this.stop()" onmouseout="this.start()">
+                        <p style="color:brown;" >24*7 Delivery services are available.Same day Delivery in all Locations. Send Yummy Cakes and fresh flowers online all across</p>
+                </marquee>
+                </div>
+            <div class="welcome">
+            <h2  style="text-align: center;  letter-spacing:
+                0.16em">
+                Welcome to <span>M</span>yCakeCart
+            </h2>
+        </div>
+            <div class="h-text">
+                <p>Free Home Delivery</p>
+                <h1>Quality F<span>oo</span>ds </h1>
+                <h2>Cake of the Week</h2>
+                <a th:href="@{/shop}" href="#" id="order">Order now!!</a>
+                <a th:href="@{/shop}" href="#" id="dis">25% Off Hurry!!</a>
+            </div>
+            <div id="pizza">
+                <img th:src="@{/productImages/cakeForIndex.png}" src="../static/productImages/cakeForIndex.png" width="100">
+                <img th:src="@{/productImages/cakeForIndex.png}" src="../static/productImages/cakeForIndex.png" width="100">
+                <img th:src="@{/productImages/cakeForIndex.png}" src="../static/productImages/cakeForIndex.png" width="100">
+            </div>
+        </header>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    </body>
+</html>

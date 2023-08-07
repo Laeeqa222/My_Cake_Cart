@@ -1,0 +1,20 @@
+
+    
+    /* .nav-item:hover .nav-link {
+    background-color: rgb(13, 239, 149);
+    color: rgb(233, 219, 219); 
+    }  */
+    
+    .nav-link:hover   {
+        background-color: rgba(187, 207, 225, 0.316);
+        border-bottom-left-radius: 19px;
+        border-top-right-radius: 19px;
+       
+}
+.nav-link{
+    color: black;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+
